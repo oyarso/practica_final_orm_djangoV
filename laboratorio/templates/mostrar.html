@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacion de Laboratorios</title>
+    <style>
+        table {
+        border: 8px outset;
+        border-radius: 10px;
+        border-spacing: 10px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        th,
+        td {
+        padding: 5px;
+        border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align:center"> Información de Laboratorios </h2>
+    <table align="center" style="margin: 0px auto;">
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Ciudad</th> 
+        <th>Pais</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for laboratorio in laboratorios %}
+    <tr>
+    <td>{{laboratorio.lab_nombre}}</td> 
+    <td>{{laboratorio.lab_ciudad}}</td>
+    <td>{{laboratorio.lab_pais}}</td>
+    <td>
+    <a href="/editar/{{laboratorio.lab_id}}">Actualizar</a>
+    </td>
+    <td>
+    <a href="/eliminar/{{laboratorio.lab_id}}">Eliminar</a>
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    <br><br>
+    <p>
+        <a href="{% url 'insertar-lab' %}">Ir a la pagina de Inicio</a>
+    </p>
+    </body>
+    </html>
