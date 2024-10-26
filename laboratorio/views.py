@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from django.views.generic import TemplateView
 from .models import Laboratorio
 
 def insertar_lab(request):
@@ -49,3 +49,9 @@ def eliminar_lab(request, pk):
     'laboratorio': laboratorio,
     }
     return render(request, 'eliminar.html', context)
+
+
+class InicioPageView(TemplateView):
+    template_name = "inicio.html"
+class AcercaPageView(TemplateView):
+    template_name = "acerca-de.html"

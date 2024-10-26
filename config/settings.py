@@ -84,6 +84,9 @@ DATABASES = {
 		'PASSWORD': 'userdjango', 
 		'HOST': 'localhost',
 		'PORT': '5432', 
+        'TEST': {
+            'NAME': 'default',
+        },
 	}
 } 
 
